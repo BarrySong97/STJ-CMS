@@ -1,0 +1,76 @@
+.rootSidenavTab {
+  align-items: flex-start;
+  background: var(--semi-color-bg-0);
+  overflow: hidden;
+  height: 100vh;
+  row-gap: 0;
+  color: var(--semi-color-text-0);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  line-height: 28px;
+  text-align: left;
+
+  .nav {
+    .navigationHeaderLogo {
+      .semiIconsSemiLogo {
+        font-size: 36px;
+        color: var(--semi-color-text-0);
+      }
+    }
+
+    .dIV {
+      align-items: center;
+      column-gap: 16px;
+      display: inline-flex;
+      flex-shrink: 0;
+
+      .semiIconsFeishuLogo,
+      .semiIconsHelpCircle,
+      .semiIconsBell {
+        font-size: 20px;
+        color: var(--semi-color-text-2);
+      }
+
+      .avatar {
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
+
+  .main {
+    align-items: flex-start;
+    display: flex;
+    height: calc(100% - 60px);
+    .left {
+      height: 100%;
+      .navItem {
+        .iconIntro,
+        .iconRadio {
+          height: 20px;
+          position: relative;
+          width: 20px;
+        }
+      }
+
+      .navItem {
+        .iconHeart,
+        .iconCalendar,
+        .iconCheckbox,
+        .iconCalendar,
+        .iconList,
+        .iconToast {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    .mainRight {
+      overflow: scroll;
+      height: 100%;
+      flex: 1;
+    }
+  }
+}
