@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Nav, Avatar, Tabs, TabPane } from "@douyinfe/semi-ui";
+import { Nav, Avatar, Breadcrumb, Typography } from "@douyinfe/semi-ui";
 import {
   IconSemiLogo,
   IconFeishuLogo,
@@ -8,20 +8,12 @@ import {
   IconBell,
   IconSetting,
 } from "@douyinfe/semi-icons";
-import {
-  IconHeart,
-  IconCalendar,
-  IconCheckbox,
-  IconRadio,
-  IconList,
-  IconToast,
-} from "@douyinfe/semi-icons-lab";
+import { IconHeart, IconCalendar, IconRadio } from "@douyinfe/semi-icons-lab";
 import styles from "./index.module.scss";
 import { usePathname } from "next/navigation";
-
+const { Title } = Typography;
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname().split("/").pop();
-  console.log(pathname);
 
   const navItems = [
     {
@@ -67,6 +59,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       className: styles.navItem,
     },
   ];
+  const headerName = navItems.find((v) => v.itemKey === pathname)?.text;
   return (
     <div className={styles.rootSidenavTab}>
       <Nav
@@ -110,7 +103,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           footer={{ collapseButton: true }}
           className={styles.left}
         ></Nav>
-        <div className={styles.mainRight}>{children}</div>
+        <div className={styles.mainRight}>
+          <Title heading={3} className="!mb-2">
+            {headerName}
+          </Title>
+          {children}
+        </div>
       </div>
     </div>
   );
