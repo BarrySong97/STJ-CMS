@@ -118,7 +118,7 @@ const PostHeatmap = () => {
   };
 
   return (
-    <Card className="shadow w-1/2">
+    <Card className="w-1/2">
       <Heatmap {...config} />
     </Card>
   );

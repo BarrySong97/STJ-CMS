@@ -13,7 +13,7 @@ const DataChip: FC<DataChipProps> = ({ datasource }) => {
   const { title, data, icon } = datasource;
   return (
     <Card
-      className="shadow"
+      // className="shadow"
       bodyStyle={{
         display: "flex",
         alignItems: "center",

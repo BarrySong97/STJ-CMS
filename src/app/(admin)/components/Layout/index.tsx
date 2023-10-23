@@ -104,9 +104,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           className={styles.left}
         ></Nav>
         <div className={styles.mainRight}>
-          <Title heading={3} className="!mb-2">
+          {/* <Title heading={3} className="!mb-2">
             {headerName}
-          </Title>
+          </Title> */}
           {children}
         </div>
       </div>
