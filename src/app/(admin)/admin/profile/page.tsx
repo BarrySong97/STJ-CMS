@@ -44,55 +44,43 @@ const Users = () => {
                 style={{ width: "100%" }}
                 fieldStyle={{ alignSelf: "stretch", padding: 0 }}
               />
-            </div>
-            <div className={styles.frame1312316523}>
-              <Form.TextArea
-                label={{ text: "Bio" }}
-                field="textare"
-                placeholder="请输入内容"
-                validateStatus="default"
+              <Form.Input
+                label={{ text: "github" }}
+                field="github"
+                placeholder="请输入"
                 style={{ width: "100%" }}
                 fieldStyle={{ alignSelf: "stretch", padding: 0 }}
               />
               <Form.Input
-                label={{ text: "Website" }}
-                field="field3"
+                label={{ text: "BiliBili" }}
+                field="github"
                 placeholder="请输入"
-                prefix="https://"
-                insetLabel="https://"
                 style={{ width: "100%" }}
                 fieldStyle={{ alignSelf: "stretch", padding: 0 }}
               />
-              <div className={styles.formField5frEnabled}>
-                <div className={styles.label}>
-                  <p className={styles.portfolio}>Portfolio</p>
-                </div>
-                <Upload
-                  action="https://run.mocky.io/v3/d6ac5c9e-4d39-4309-a747-7ed3b5694859"
-                  dragSubText="仅支持 png, jpeg"
-                  draggable={true}
-                  promptPosition="left"
-                  defaultFileList={[
-                    {
-                      uid: "1",
-                      name: "file1.jpeg",
-                      status: "success",
-                      size: "130kb",
-                      url: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/semi-linker/semi-logo.png",
-                    },
-                    {
-                      uid: "2",
-                      name: "file2.jpeg",
-                      status: "success",
-                      size: "222kb",
-                      url: "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/semi-linker/semi-logo.png",
-                    },
-                  ]}
-                  dragMainText="点击上传文件或拖拽文件到这里"
-                  className={styles.upload}
-                />
-              </div>
+              <Form.Input
+                label={{ text: "weibo" }}
+                field="weibo"
+                placeholder="请输入"
+                style={{ width: "100%" }}
+                fieldStyle={{ alignSelf: "stretch", padding: 0 }}
+              />
+              <Form.Input
+                label={{ text: "X(Twitter)" }}
+                field="github"
+                placeholder="请输入"
+                style={{ width: "100%" }}
+                fieldStyle={{ alignSelf: "stretch", padding: 0 }}
+              />
             </div>
+            <Form.TextArea
+              label={{ text: "Bio" }}
+              field="textare"
+              placeholder="请输入内容"
+              validateStatus="default"
+              style={{ width: "100%" }}
+              fieldStyle={{ alignSelf: "stretch", padding: 0 }}
+            />
           </Form>
           <div className={styles.avatar}>
             <Avatar

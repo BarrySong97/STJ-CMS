@@ -1,16 +1,21 @@
 "use client";
 import React from "react";
-import { Nav, Avatar, Breadcrumb, Typography } from "@douyinfe/semi-ui";
+import { Nav, Avatar, Typography } from "@douyinfe/semi-ui";
 import {
   IconSemiLogo,
   IconFeishuLogo,
   IconHelpCircle,
   IconBell,
-  IconSetting,
 } from "@douyinfe/semi-icons";
-import { IconHeart, IconCalendar, IconRadio } from "@douyinfe/semi-icons-lab";
 import styles from "./index.module.scss";
 import { usePathname } from "next/navigation";
+import {
+  IcBaselinePhotoLibrary,
+  MaterialSymbolsAccountCircle,
+  MaterialSymbolsDashboard,
+  MaterialSymbolsPostOutline,
+  PhWallFill,
+} from "../../icon";
 const { Title } = Typography;
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname().split("/").pop();
@@ -20,46 +25,45 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       itemKey: "admin",
       link: "/admin",
       text: "Dashboard",
-      icon: <IconHeart className={styles.iconHeart} />,
+      icon: <MaterialSymbolsDashboard className={styles.iconHeart} />,
       className: styles.navItem,
     },
     {
-      itemKey: "media",
-      text: "Medias",
-      link: "/admin/media",
-      icon: <IconCalendar className={styles.iconCalendar} />,
+      itemKey: "photos",
+      text: "Photos",
+      link: "/admin/photos",
+      icon: <IcBaselinePhotoLibrary className={styles.iconCalendar} />,
       className: styles.navItem,
     },
     {
       itemKey: "posts",
       text: "Posts",
       link: "/admin/posts",
-      icon: <IconCalendar className={styles.iconCalendar} />,
+      icon: <MaterialSymbolsPostOutline className={styles.iconCalendar} />,
+      className: styles.navItem,
+    },
+    // {
+    //   itemKey: "comments",
+    //   text: "Comments",
+    //   link: "/admin/comments",
+    //   icon: <MaterialSymbolsCommentRounded className={styles.iconRadio} />,
+    //   className: styles.navItem,
+    // },
+    {
+      itemKey: "profile",
+      text: "profile",
+      link: "/admin/profile",
+      icon: <MaterialSymbolsAccountCircle className={styles.iconToast} />,
       className: styles.navItem,
     },
     {
-      itemKey: "comments",
-      text: "Comments",
-      link: "/admin/comments",
-      icon: <IconRadio className={styles.iconRadio} />,
-      className: styles.navItem,
-    },
-    {
-      itemKey: "users",
-      text: "Users",
-      link: "/admin/users",
-      icon: <IconRadio className={styles.iconRadio} />,
-      className: styles.navItem,
-    },
-    {
-      itemKey: "settings",
-      text: "Settings",
-      link: "/admin/settings",
-      icon: <IconSetting className={styles.iconToast} />,
+      itemKey: "imageWall",
+      text: "Image Wall",
+      link: "/admin/imageWall",
+      icon: <PhWallFill className={styles.iconToast} />,
       className: styles.navItem,
     },
   ];
-  const headerName = navItems.find((v) => v.itemKey === pathname)?.text;
   return (
     <div className={styles.rootSidenavTab}>
       <Nav

@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@douyinfe/semi-ui";
 import { ColumnProps } from "@douyinfe/semi-ui/lib/es/table";
+import Link from "next/link";
 import React, { FC, useEffect, useMemo, useState } from "react";
 export interface PostsProps {}
 const { Text } = Typography;
@@ -116,42 +117,13 @@ const Posts: FC<PostsProps> = () => {
     const data = getData();
     setData(data);
   }, []);
-  const data = [
-    {
-      key: "1",
-      name: "Semi Design 设计稿.fig",
-      nameIconSrc:
-        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/figma-icon.png",
-      size: "2M",
-      owner: "姜鹏志",
-      updateTime: "2020-02-02 05:13",
-      avatarBg: "grey",
-    },
-    {
-      key: "2",
-      name: "Semi Design 分享演示文稿",
-      nameIconSrc:
-        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
-      size: "2M",
-      owner: "郝宣",
-      updateTime: "2020-01-17 05:31",
-      avatarBg: "red",
-    },
-    {
-      key: "3",
-      name: "设计文档",
-      nameIconSrc:
-        "https://lf3-static.bytednsdoc.com/obj/eden-cn/ptlz_zlp/ljhwZthlaukjlkulzlp/docs-icon.png",
-      size: "34KB",
-      owner: "Zoey Edwards",
-      updateTime: "2020-01-26 11:01",
-      avatarBg: "light-blue",
-    },
-  ];
 
   return (
     <div title="posts">
-      <div className="flex  items-center mb-4 ">
+      <div className="flex  justify-between items-center mb-4 ">
+        <Button className="mr-2" theme="solid">
+          <Link href={"/admin/posts/new"}> New</Link>
+        </Button>
         <Form
           layout="horizontal"
           labelPosition="inset"
@@ -174,10 +146,6 @@ const Posts: FC<PostsProps> = () => {
             type="dateRange"
           ></Form.DatePicker>
         </Form>
-        <Button className="mr-2" theme="solid">
-          Search
-        </Button>
-        <Button>Reset</Button>
       </div>
       <Table
         columns={columns}

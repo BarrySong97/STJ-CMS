@@ -20,11 +20,11 @@ const DataChip: FC<DataChipProps> = ({ datasource }) => {
         justifyContent: "space-between",
       }}
     >
-      {icon && <div className="text-5xl">{icon}</div>}
       <div>
-        <Title heading={4}>{title}</Title>
         <Title heading={5}>{data}</Title>
+        <Title heading={4}>{title}</Title>
       </div>
+      {icon && <div className="text-5xl">{icon}</div>}
     </Card>
   );
 };

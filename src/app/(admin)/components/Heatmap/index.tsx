@@ -117,11 +117,7 @@ const PostHeatmap = () => {
     },
   };
 
-  return (
-    <Card className="w-1/2">
-      <Heatmap {...config} />
-    </Card>
-  );
+  return <Heatmap {...config} />;
 };
 
 export default PostHeatmap;
